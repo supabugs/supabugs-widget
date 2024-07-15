@@ -38,7 +38,7 @@ function init() {
   const widgetElement = document.getElementById("supabugs__widget__iframe")!;
   widgetElement.setAttribute(
     "src",
-    `http://localhost:4010/widgets/${token}/form?type=${type}&severity=${severity}&priority=${priority}&attachments=${attachments}`
+    `https://cloud.supabugs.io/widgets/${token}/form?type=${type}&severity=${severity}&priority=${priority}&attachments=${attachments}`
   );
 }
 window.addEventListener("load", init);
