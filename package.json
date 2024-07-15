@@ -1,0 +1,40 @@
+{
+  "name": "Supabugs Widget",
+  "version": "1.0.0",
+  "license": "MIT",
+  "homepage": "https://www.supabugs.io",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/supabugs/widget.git"
+  },
+  "type": "module",
+  "source": "src/index.ts",
+  "exports": {
+    "require": "./dist/index.cjs",
+    "default": "./dist/index.modern.js"
+  },
+  "types": "./dist/src/index.d.ts",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.module.js",
+  "unpkg": "./dist/index.umd.js",
+  "files": [
+    "dist/**/*"
+  ],
+  "scripts": {
+    "build": "node ./generate-widget-html && microbundle --define process.env.NODE_ENV=production",
+    "dev": "node ./generate-widget-html && microbundle watch --define process.env.NODE_ENV=production",
+    "prepare": "husky install && node ./generate-widget-html && git add src/widget-html.ts && microbundle --define process.env.NODE_ENV=production"
+  },
+  "devDependencies": {
+    "@floating-ui/dom": "^0.4.2",
+    "focus-trap": "^6.7.3",
+    "html-minifier": "^4.0.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.3.7",
+    "microbundle": "^0.14.2",
+    "prettier": "^2.6.1"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
+  }
+}
