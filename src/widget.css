@@ -18,12 +18,12 @@
 
 #supabugs__widget__container #supabugs__widget.expanded {
   height: 100vh;
+  height: var(--app-height);
   /* border-radius: 10px; */
   border-radius: 0px;
   bottom: 0;
   right: 0;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15),
-    0 6px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15), 0 6px 6px rgba(0, 0, 0, 0.1);
 }
 
 #supabugs__widget__container #supabugs__widget__image {
@@ -32,7 +32,9 @@
   object-fit: cover;
 }
 
-#supabugs__widget__container #supabugs__widget.expanded #supabugs__widget__image {
+#supabugs__widget__container
+  #supabugs__widget.expanded
+  #supabugs__widget__image {
   display: none;
 }
 
@@ -43,7 +45,9 @@
   position: relative;
 }
 
-#supabugs__widget__container #supabugs__widget.expanded #supabugs__widget__content {
+#supabugs__widget__container
+  #supabugs__widget.expanded
+  #supabugs__widget__content {
   display: block;
 }
 

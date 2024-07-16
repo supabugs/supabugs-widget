@@ -1,6 +1,16 @@
 import formCSS from "./widget.css";
 import { widgetHTML } from "./widget-html";
 
+function setAppHeight() {
+  const widgetContainer = document.getElementById(
+    "supabugs__widget__container"
+  );
+  widgetContainer!.style.setProperty(
+    "--app-height",
+    `${window!.visualViewport!.height}px`
+  );
+}
+
 function init() {
   // add styles
   const styleElement = document.createElement("style");
@@ -21,6 +31,10 @@ function init() {
     "supabugs__widget__container"
   );
   widgetContainer!.innerHTML = widgetHTML;
+  widgetContainer!.style.setProperty(
+    "--app-height",
+    `${window!.visualViewport!.height}px`
+  );
 
   const token = widgetContainer!.dataset.token;
 
@@ -42,3 +56,4 @@ function init() {
   );
 }
 window.addEventListener("load", init);
+window.visualViewport!.addEventListener("resize", setAppHeight);
