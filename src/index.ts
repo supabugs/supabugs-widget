@@ -1,14 +1,27 @@
 import formCSS from "./widget.css";
 import { widgetHTML } from "./widget-html";
 
+let initialHeight: any;
+let isKeyboardVisible = false;
+
 function setAppHeight() {
   const widgetContainer = document.getElementById(
     "supabugs__widget__container"
   );
-  widgetContainer!.style.setProperty(
-    "--app-height",
-    `${window!.visualViewport!.height}px`
-  );
+
+  if (!initialHeight) {
+    initialHeight = window.visualViewport!.height;
+  }
+
+  isKeyboardVisible = window.innerHeight < initialHeight * 0.75;
+
+  // Only update height if keyboard is not visible
+  if (!isKeyboardVisible) {
+    widgetContainer!.style.setProperty(
+      "--app-height",
+      `${window.visualViewport!.height}px`
+    );
+  }
 }
 
 function init() {
@@ -57,3 +70,8 @@ function init() {
 }
 window.addEventListener("load", init);
 window.visualViewport!.addEventListener("resize", setAppHeight);
+window.addEventListener("orientationchange", () => {
+  // Reset initialHeight on orientation change
+  initialHeight = null;
+  setTimeout(setAppHeight, 100); // Short delay to allow for orientation change
+});
