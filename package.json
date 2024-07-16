@@ -1,11 +1,13 @@
 {
-  "name": "Supabugs Widget",
+  "name": "supabugs-widget",
+  "author": "Steve Means",
+  "description": "Javascript widget to record issues directly on Supabugs from every site",
   "version": "1.0.0",
   "license": "MIT",
   "homepage": "https://www.supabugs.io",
   "repository": {
     "type": "git",
-    "url": "https://github.com/supabugs/widget.git"
+    "url": "https://github.com/supabugs/supabugs-widget.git"
   },
   "type": "module",
   "source": "src/index.ts",
