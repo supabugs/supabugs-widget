@@ -30,7 +30,7 @@ That’s it.**
 1. Load the widget on your page:
 
    ```html
-   <script src="https://unpkg.com/supabugs-widget@1.0.3" defer></script>
+   <script src="https://unpkg.com/supabugs-widget@latest" defer></script>
    ```
 
 2. Set a div to open the widget:
