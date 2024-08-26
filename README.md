@@ -80,6 +80,10 @@ dropdown.
 Default `false`. Set it to `true`if you want to show the upload Attachments
 field.
 
+### `data-caption`
+
+The text behind the form. Something like "Report a new issue for this website"
+
 ## How it works
 
 When the script is loaded, it looks for the element with the
