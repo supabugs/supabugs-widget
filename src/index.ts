@@ -60,12 +60,13 @@ function init() {
   const severity = widgetContainer!.dataset.severity === "true" || false;
   const priority = widgetContainer!.dataset.priority === "true" || false;
   const attachments = widgetContainer!.dataset.attachments === "true" || false;
+  const caption = widgetContainer!.dataset.caption || "Report a new issue";
 
   // injecting frame
   const widgetElement = document.getElementById("supabugs__widget__iframe")!;
   widgetElement.setAttribute(
     "src",
-    `https://cloud.supabugs.io/widgets/${token}/form?type=${type}&severity=${severity}&priority=${priority}&attachments=${attachments}`
+    `https://cloud.supabugs.io/widgets/${token}/form?type=${type}&severity=${severity}&priority=${priority}&attachments=${attachments}&caption=${caption}`
   );
 }
 window.addEventListener("load", init);
